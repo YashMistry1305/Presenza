@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Report System</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <h1>Attendance Report System</h1>
+        <p>
+          Upload student attendance data (CSV) to generate a report classifying
+          regular students (≥ 75%) and defaulters (&lt; 75%).
+        </p>
+      </header>
+
+      <section class="card" aria-labelledby="form-title">
+        <div class="card__header">
+          <div class="card__icon" aria-hidden="true">📄</div>
+          <div>
+            <h2 id="form-title">Generate Report</h2>
+            <p class="card__hint">
+              Expected CSV columns: Roll Number, Class, Student Name, Practical,
+              Theory
+            </p>
+          </div>
+        </div>
+
+        <form id="reportForm" class="form" novalidate>
+          <label class="field">
+            <span>Upload CSV File</span>
+            <input
+              id="csvFile"
+              type="file"
+              accept=".csv"
+              aria-describedby="fileHelp"
+              required
+            />
+            <small id="fileHelp">Only .csv files are accepted.</small>
+          </label>
+
+          <label class="field">
+            <span>Email Address</span>
+            <input
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+          </label>
+
+          <button type="submit" class="btn" id="submitBtn">
+            Submit &amp; Generate Report
+          </button>
+        </form>
+
+        <section class="success" id="successView" hidden>
+          <div class="success__icon" aria-hidden="true">✓</div>
+          <h3>Report Generated Successfully</h3>
+          <p>
+            A download link has been sent to
+            <span id="successEmail">your email</span>.
+          </p>
+          <button type="button" class="btn btn--ghost" id="resetBtn">
+            Generate Another
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
