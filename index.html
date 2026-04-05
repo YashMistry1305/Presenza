@@ -30,15 +30,25 @@
 
         <form id="reportForm" class="form" novalidate>
           <label class="field">
-            <span>Upload CSV File</span>
+            <span>Upload Practical CSV</span>
             <input
-              id="csvFile"
+              id="practicalCsv"
               type="file"
               accept=".csv"
               aria-describedby="fileHelp"
               required
             />
             <small id="fileHelp">Only .csv files are accepted.</small>
+          </label>
+
+          <label class="field">
+            <span>Upload Theory CSV</span>
+            <input
+              id="theoryCsv"
+              type="file"
+              accept=".csv"
+              required
+            />
           </label>
 
           <label class="field">
@@ -63,6 +73,29 @@
             A download link has been sent to
             <span id="successEmail">your email</span>.
           </p>
+          <div class="report" id="reportView" hidden>
+            <h4>Defaulter Report</h4>
+            <div class="report__section">
+              <h5>Overall Defaulters (&lt; 75% in Practical or Theory)</h5>
+              <div class="report__table" id="overallTable"></div>
+            </div>
+            <div class="report__section">
+              <h5>Practical Defaulters (&lt; 75%)</h5>
+              <div class="report__table" id="practicalTable"></div>
+            </div>
+            <div class="report__section">
+              <h5>Theory Defaulters (&lt; 75%)</h5>
+              <div class="report__table" id="theoryTable"></div>
+            </div>
+            <div class="report__actions">
+              <a class="btn btn--ghost" id="downloadReport" href="#" download hidden>
+                Download PDF Report
+              </a>
+              <p class="report__hint" id="downloadHint" hidden>
+                Report is ready. Click to download.
+              </p>
+            </div>
+          </div>
           <button type="button" class="btn btn--ghost" id="resetBtn">
             Generate Another
           </button>

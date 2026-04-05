@@ -67,3 +67,12 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# Build output
+dist/
+
+# Local agent artifacts
+.agents/
+
+# Local lock files
+skills-lock.json

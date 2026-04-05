@@ -4,7 +4,6 @@
 
 // Firebase SDK (modular)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import {
   getStorage,
   ref as storageRef,
@@ -22,15 +21,14 @@ const resetBtn = document.getElementById("resetBtn");
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Firebase project configuration
+// TODO: Replace with your Firebase project configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAn0iNX_qTcvYDuFfox98RLnGfzPWuHBlU",
-  authDomain: "presenza-dy.firebaseapp.com",
-  projectId: "presenza-dy",
-  storageBucket: "presenza-dy.firebasestorage.app",
-  messagingSenderId: "1062655496541",
-  appId: "1:1062655496541:web:5862a5277d9a920fe0d8b4",
-  measurementId: "G-KQCXQNSZG5",
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
 };
 
 // TODO: Replace with your HTTPS Cloud Function URL
@@ -38,7 +36,6 @@ const firebaseConfig = {
 const FUNCTION_URL = "YOUR_FUNCTION_URL";
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const storage = getStorage(app);
 
 const setButtonState = (label, disabled = true) => {
